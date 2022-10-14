@@ -1,4 +1,4 @@
 # basics
 
 ### Python basic examples
-### Send dislike to IKhapilov
+### Send dislike to IKhapilov and Stickman001
