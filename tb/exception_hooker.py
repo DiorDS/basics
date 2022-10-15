@@ -26,7 +26,7 @@ class ErrorReport:
             e_traceback = e_traceback.tb_next
 
     def __repr__(self) -> str:
-        return json.dumps(self.trace)
+        return json.dumps(self.trace, indent=4)
             
 
 
