@@ -10,3 +10,4 @@ assert config == {"PY-ENV":{"secret_key": "36ed6ds67d#@$%6d7s6d//^RD&^%6%&*rfdsd
 
 
 print("All tests gets good results!")
+print("Commit is good!")
