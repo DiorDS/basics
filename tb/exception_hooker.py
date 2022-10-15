@@ -7,7 +7,6 @@ def raise_some_error():
 
 
 class ErrorReport:
-
     message:str
     trace:dict
     name:str
