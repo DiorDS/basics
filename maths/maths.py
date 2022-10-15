@@ -17,3 +17,4 @@ print(a / b) # Деление
 print(a ** c) # Степень
 
 print(basic_funcs.avg(abc)) # Свое среднее из списка
+
