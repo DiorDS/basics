@@ -29,5 +29,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test alll funcs
       run: |
-        python3 tests/test.py
+        python3 test.py
 
