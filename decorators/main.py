@@ -1,18 +1,28 @@
 import time
-from typing import Callable
+from typing import Any, Callable
 
 from requests import get
 
 
 def safe(func: Callable) -> Callable:
-    def _wrapper(*args, **kwargs):
+    def _wrapper(*args, **kwargs) -> tuple[Any, dict]:
         try:
             start = time.perf_counter_ns()
             result = func(*args, **kwargs)
-            return (result, (time.perf_counter_ns() - start) / 10000000)
+            report = {
+                "time": (time.perf_counter_ns() - start) / 10000000,
+                "sucsess": True,
+                "error": None
+            }
+            return (result, report)
         
         except Exception as e:
-            return (None, e)
+            report = {
+                "time": (time.perf_counter_ns() - start) / 10000000,
+                "sucsess": False,
+                "error": str(e)
+            }
+            return (None, report)
 
     return _wrapper
 
@@ -21,7 +31,6 @@ def safe(func: Callable) -> Callable:
 def call():
     result = get("https://ya.ru")
     print(result.status_code)
-    print(result.text[:30])
 
 
 for _ in range(5):
