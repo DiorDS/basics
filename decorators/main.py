@@ -1,8 +1,7 @@
 import time
-import requests
 from typing import Callable
 
-
+from requests import get
 
 
 def safe(func: Callable) -> Callable:
@@ -20,8 +19,10 @@ def safe(func: Callable) -> Callable:
 
 @safe
 def call():
-    requests.get("https://ya.ru")
+    result = get("https://ya.ru")
+    print(result.status_code)
+    print(result.text[:30])
 
 
-print(call())
-print(call())
+for _ in range(5):
+    print(call())

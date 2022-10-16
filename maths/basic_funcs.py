@@ -8,7 +8,7 @@ __all__ = ["avg", "median", "std"]
 
 def median(_list: Iterable[int | float])  -> float | int: 
     # Медиана списка
-    n = len(_list)
+    n = len(_list) 
     mid = n // 2
     if n % 2 == 1:
         return sorted(_list)[mid]
@@ -18,11 +18,11 @@ def median(_list: Iterable[int | float])  -> float | int:
 def std(_list: Iterable[int | float])  -> float | int: 
     # Среднеквадратичное списка
     mu = avg(_list)
-    n = len(_list)
+    n = len(_list) 
     n = n-1 if n in range(1, 30) else n  
     square_deviation = lambda x: (x - mu) ** 2 
     return math.sqrt(sum(map(square_deviation, _list)) / n)
 
 def avg(_list: Iterable[int | float]) -> float | int:
     # Срнеднее арифметическое из списка
-    return sum(_list) / len(_list)
+    return sum(_list) / len(_list) 
